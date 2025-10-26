@@ -51,7 +51,7 @@ export class LoginComponent {
     }
     // check thỏa mãn điều kiện đăng nhập (giả lập) email phải là admin@gmail.com và password là admin123
     if (this.loginEmail() !== 'admin@gmail.com' || this.loginPassword() !== 'Anhpro@1234') {
-      this.toast.set({ type: 'error', message: 'Đăng nhập không thành công.' });
+      this.toast.set({ type: 'error', message: 'Sai tài khoản hoặc mật khẩu ! ' });
       setTimeout(() => this.hideToast(), 3000);
       return;
     }
