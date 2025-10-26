@@ -1,0 +1,156 @@
+<div class="min-h-screen grid grid-cols-1 md:grid-cols-2">
+
+    <!-- 1. Phần Sidebar (Hình ảnh) -->
+    <div class="bg-primary text-white p-8 md:p-12 flex flex-col justify-center items-start h-64 md:h-screen relative">
+        <div class="absolute inset-0 bg-black opacity-20"></div>
+        <div class="relative z-10">
+            <div class="flex items-center space-x-2 mb-6">
+                <svg class="h-10 w-10" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M21.58 9.64l-6.23-6.23a3.003 3.003 0 00-4.24 0l-6.23 6.23a3.003 3.003 0 000 4.24l6.23 6.23a3.003 3.003 0 004.24 0l6.23-6.23a3.003 3.003 0 000-4.24zM12 13.41L9.41 16 8 14.59 10.59 12 8 9.41 9.41 8 12 10.59 14.59 8 16 9.41 13.41 12 16 14.59 14.59 16 12 13.41z" />
+                </svg>
+                <span class="text-2xl font-bold">HRM System</span>
+            </div>
+            <h1 class="text-4xl font-bold mb-4">Chào mừng trở lại!</h1>
+            <p class="text-lg text-blue-100">Hệ thống quản lý nhân sự thông minh, nhanh chóng và hiệu quả.</p>
+            <div class="absolute bottom-12 right-12 w-48 h-48 opacity-10 hidden md:block">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1"
+                    stroke="currentColor" class="w-full h-full">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A9.06 9.06 0 016 18.719m12 0a9.06 9.06 0 00-9.219-4.774M18 18.72a9.076 9.076 0 00-6.219-4.774M12 14.045c-1.837 0-3.535.432-5.063 1.182A9.06 9.06 0 006 18.719m6-4.674c-1.837 0-3.535.432-5.063 1.182m10.126 0a9.06 9.06 0 00-9.219 4.774M12 14.045c1.837 0 3.535.432 5.063 1.182m-10.126 0A9.06 9.06 0 0012 18.719m-6 0a9.076 9.076 0 016.219-4.774M12 14.045c-3.228 0-6 1.79-6 4s2.772 4 6 4 6-1.79 6-4-2.772-4-6-4zm0 6c-1.105 0-2-.895-2-2s.895-2 2-2 2 .895 2 2-.895 2-2 2z" />
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Phần Form Đăng nhập -->
+    <div class="w-full flex flex-col justify-center items-center p-8 md:p-12">
+        <div class="w-full max-w-md">
+            <!-- Logo (Mobile) -->
+            <!-- <div class="flex justify-center items-center space-x-2 mb-8 md:hidden">
+                    <svg class="h-8 w-8 text-primary" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M21.58 9.64l-6.23-6.23a3.003 3.003 0 00-4.24 0l-6.23 6.23a3.003 3.003 0 000 4.24l6.23 6.23a3.003 3.003 0 004.24 0l6.23-6.23a3.003 3.003 0 000-4.24zM12 13.41L9.41 16 8 14.59 10.59 12 8 9.41 9.41 8 12 10.59 14.59 8 16 9.41 13.41 12 16 14.59 14.59 16 12 13.41z"/></svg>
+                    <span class="text-xl font-bold text-gray-800">HRM System</span>
+                </div> -->
+
+            <h2 class="text-3xl font-bold text-gray-900 mb-2">Đăng nhập</h2>
+            <p class="text-gray-600 mb-8">Chào mừng bạn trở lại, vui lòng đăng nhập.</p>
+
+            <form (ngSubmit)="doLogin($event)" class="space-y-5">
+                <div>
+                    <label for="login-email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                    <input type="email" [(ngModel)]="this.loginEmail" id="login-email" name="login-email"
+                        placeholder="e.g. sarah.johnson@email.com"
+                        class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary">
+                </div>
+
+                <div class="relative">
+                    <label for="login-password" class="block text-sm font-medium text-gray-700 mb-1">Mật khẩu</label>
+                    <input [type]="showLoginPassword() ? 'text' : 'password'" [(ngModel)]="this.loginPassword"
+                        id="login-password" name="login-password" placeholder="Nhập mật khẩu của bạn"
+                        class="w-full p-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-primary pr-10">
+                    <button type="button" class="toggle-password absolute right-3 top-9 text-gray-500"
+                        data-target="login-password" (click)="toggleLoginPassword()">
+                        <!-- Show Icon -->
+                        @if (showLoginPassword()) {
+                        <!-- Hide Icon -->
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M3.98 8.223A10.477 10.477 0 001.934 12C3.226 16.338 7.244 19.5 12 19.5c.993 0 1.953-.138 2.863-.395M6.228 6.228A10.45 10.45 0 0112 4.5c4.756 0 8.773 3.162 10.065 7.498a10.522 10.522 0 01-4.293 5.774M6.228 6.228L3 3m3.228 3.228l3.65 3.65m7.894 7.894L21 21m-3.228-3.228l-3.65-3.65m0 0a3 3 0 10-4.243-4.243m4.243 4.243l-4.243-4.243" />
+                        </svg>
+                        } @else {
+                        <!-- Show Icon -->
+                        <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        }
+                    </button>
+                </div>
+
+                <div class="flex justify-between items-center text-sm">
+                    <div class="flex items-center space-x-2">
+                        <input type="checkbox" id="remember-me" class="rounded text-primary focus:ring-primary">
+                        <label for="remember-me" class="text-gray-600">Ghi nhớ tôi</label>
+                    </div>
+                    <!-- Sửa link -->
+                    <a href="/forgot" class="font-medium text-primary hover:text-primary-dark">Quên mật khẩu?</a>
+
+                </div>
+
+                <button type="submit"
+                    class="w-full p-3 bg-primary text-white rounded-lg font-semibold shadow-md hover:bg-primary-dark transition-colors">Đăng
+                    nhập</button>
+
+                <p class="text-sm text-center text-gray-600">
+                    Chưa có tài khoản?
+                    <!-- Sửa link -->
+                    <a href="/register" class="font-medium text-primary hover:text-primary-dark">Đăng ký ngay</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+@if (toast(); as t) {
+
+<!-- Toast Lỗi (Error) -->
+@if (t.type === 'error') {
+<div id="errorToast"
+    class="fixed top-5 right-5 z-50 max-w-sm w-full bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded-md shadow-lg"
+    role="alert">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z">
+            </path>
+        </svg>
+        <div class="flex-1">
+            <strong class="font-bold">Lỗi!</strong>
+            <span class="block text-sm">{{ t.message }}</span>
+        </div>
+        <button type="button" (click)="hideToast()"
+            class="ml-3 -mx-1.5 -my-1.5 bg-red-100 text-red-500 rounded-lg focus:ring-2 focus:ring-red-400 p-1.5 hover:bg-red-200 inline-flex h-8 w-8"
+            aria-label="Close">
+            <span class="sr-only">Đóng</span>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+}
+
+<!-- Toast Thành công (Success) -->
+@if (t.type === 'success') {
+<div id="successToast"
+    class="fixed top-5 right-5 z-50 max-w-sm w-full bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-md shadow-lg"
+    role="alert">
+    <div class="flex items-center">
+        <svg class="w-6 h-6 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <div class="flex-1">
+            <strong class="font-bold">Thành công!</strong>
+            <span class="block text-sm">{{ t.message }}</span>
+        </div>
+        <button type="button" (click)="hideToast()"
+            class="ml-3 -mx-1.5 -my-1.5 bg-green-100 text-green-500 rounded-lg focus:ring-2 focus:ring-green-400 p-1.5 hover:bg-green-200 inline-flex h-8 w-8"
+            aria-label="Close">
+            <span class="sr-only">Đóng</span>
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd"
+                    d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+            </svg>
+        </button>
+    </div>
+</div>
+}
+}

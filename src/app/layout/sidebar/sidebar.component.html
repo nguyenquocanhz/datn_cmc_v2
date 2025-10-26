@@ -1,0 +1,103 @@
+<aside class="hidden lg:flex w-64 flex-col bg-white shadow-lg">
+          <!-- Logo Section (SỬA) -->
+          <div class="flex items-center justify-center h-20 shadow-sm gap-1 px-4">
+              <!-- SVG Logo mô phỏng -->
+              <svg class="h-8 w-8 text-blue-600" fill="currentColor" viewBox="0 0 118 30">
+                  <path d="M14.2,0C6.4,0,0,6.4,0,14.2C0,22,6.4,28.4,14.2,28.4C22,28.4,28.4,22,28.4,14.2C28.4,6.4,22,0,14.2,0 M14.2,24.4 C8.5,24.4,4,19.9,4,14.2C4,8.5,8.5,4,14.2,4C19.9,4,24.4,8.5,24.4,14.2C24.4,19.9,19.9,24.4,14.2,24.4"/>
+                  <path d="M29.5,14.2C29.5,22,35.9,28.4,43.7,28.4C51.5,28.4,57.9,22,57.9,14.2C57.9,6.4,51.5,0,43.7,0C35.9,0,29.5,6.4,29.5,14.2 M53.9,14.2C53.9,19.9,49.4,24.4,43.7,24.4C38,24.4,33.5,19.9,33.5,14.2C33.5,8.5,38,4,43.7,4C49.4,4,53.9,8.5,53.9,14.2"/>
+                  <path d="M63.6,0h-6.1l-4,9.6l-4-9.6h-6.1v28h4V10.2l4.8,11.5h2.6l4.8-11.5v17.7h4V0Z"/>
+                  <path d="M84.2,24.4c-3.1,0-5.4-1.4-6.7-3.5l3.2-1.9c0.8,1.3,1.9,2.1,3.5,2.1c2.2,0,3.6-1.5,3.6-3.4v-0.2c-0.5,0.1-1.1,0.2-1.8,0.2 C82.3,21.7,79,19.2,79,14.3c0-4.6,3.3-7.8,7.6-7.8c2.9,0,5.1,1.5,6.3,3.8l-3.2,2c-0.7-1.3-1.8-2-3.1-2c-1.9,0-3.3,1.6-3.3,3.9 c0,2.6,1.8,4.1,4.3,4.1c0.9,0,1.7-0.1,2.3-0.3v-2.1h-2.9v-3.3h6.3V21C90.3,23.3,87.6,24.4,84.2,24.4"/>
+                  <path d="M100.2,6.5h-5.8v21.5h-4V6.5h-5.8V2.9h15.7V6.5Z"/>
+                  <path d="M117.8,14.2c0-5.7-4.1-9.5-10.1-9.5c-6.1,0-10.1,3.8-10.1,9.5c0,5.7,4.1,9.5,10.1,9.5C113.8,23.7,117.8,19.9,117.8,14.2 M113.8,14.2c0,3.6-2.5,6.2-6.1,6.2c-3.6,0-6.1-2.6-6.1-6.2c0-3.6,2.5-6.2,6.1-6.2C111.3,8,113.8,10.6,113.8,14.2"/>
+              </svg>
+          </div>
+
+          <!-- 
+            Nav Section 
+            (SỬA) Cập nhật padding và khoảng cách
+          -->
+          <nav class="flex overflow-y-auto mt-6">
+              <ul class="space-y-4 px-6">
+                  <!-- (SỬA) Mục Trang chủ - Active -->
+                  <li>
+                      <a href="#"
+                          class="flex items-center px-4 py-3 bg-blue-600 text-white font-semibold rounded-lg shadow-md">
+                          <!-- Heroicon: home (solid) -->
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                              <path d="M11.47 3.84a.75.75 0 011.06 0l8.69 8.69a.75.75 0 101.06-1.06l-8.689-8.69a2.25 2.25 0 00-3.182 0L2.47 11.47a.75.75 0 101.06 1.06l8.69-8.69z" />
+                              <path d="M12 5.432l8.159 8.159c.03.03.06.058.091.086v6.198c0 1.035-.84 1.875-1.875 1.875H15a.75.75 0 01-.75-.75v-4.5a.75.75 0 00-.75-.75h-3a.75.75 0 00-.75.75V21a.75.75 0 01-.75.75H5.625a1.875 1.875 0 01-1.875-1.875v-6.198a2.29 2.29 0 00.091-.086L12 5.43z" />
+                          </svg>
+                          <span class="ml-3">Trang chủ</span>
+                      </a>
+                  </li>
+                  <!-- (SỬA) Mục Chat - Inactive -->
+                  <li>
+                      <a href="#"
+                          class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg">
+                          <!-- Heroicon: envelope (outline) -->
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
+                          </svg>
+                          <span class="ml-3">Chat</span>
+                      </a>
+                  </li>
+                  <!-- (SỬA) Mục QL Nhân viên - Inactive -->
+                  <li>
+                      <a href="#"
+                          class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg">
+                          <!-- Heroicon: users (outline) -->
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM18 9a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
+                          </svg>
+                          <span class="ml-3">Quản lý nhân viên</span>
+                      </a>
+                  </li>
+                  <!-- (SỬA) Mục QL Chấm công - Inactive -->
+                  <li>
+                      <a href="#"
+                          class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg">
+                          <!-- Heroicon: chart-bar (outline) -->
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+                          </svg>
+                          <span class="ml-3">Quản lý chấm công</span>
+                      </a>
+                  </li>
+                  <!-- (SỬA) Mục Lương - Inactive -->
+                  <li>
+                      <a href="#"
+                          class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg">
+                          <!-- Heroicon: bank-notes (outline) -->
+                           <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0A.75.75 0 013.75 6v.75m0 0v.75A.75.75 0 013 7.5h-.75m0 0v-.75A.75.75 0 013 6h.75M15 12v-3.375c0-.621-.504-1.125-1.125-1.125h-3.75c-.621 0-1.125.504-1.125 1.125V12m0 0v3.375c0 .621.504 1.125 1.125 1.125h3.75c.621 0 1.125-.504 1.125-1.125V12m-4.5 0h4.5M15 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                          </svg>
+                          <span class="ml-3">Lương</span>
+                      </a>
+                  </li>
+                  <!-- (SỬA) Mục QL Nghỉ phép - Inactive -->
+                  <li>
+                      <a href="#"
+                          class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg">
+                          <!-- Heroicon: calendar-days (outline) -->
+                          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+                          </svg>
+                          <span class="ml-3">Quản lý nghỉ phép</span>
+                      </a>
+                  </li>
+              </ul>
+          </nav>
+
+          <!-- (XÓA) Footer Sidebar đã bị loại bỏ -->
+                      <!-- (MỚI) Thêm nút Đăng xuất -->
+            <div class="p-4 border-t border-gray-200">
+                <a href="#"
+                    class="flex items-center px-4 py-3 text-gray-700 hover:bg-gray-100 hover:text-gray-900 rounded-lg">
+                    <!-- Heroicon: arrow-right-on-rectangle (outline) -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
+                    </svg>
+                    <span class="ml-3">Đăng xuất</span>
+                </a>
+            </div>
+      </aside>
